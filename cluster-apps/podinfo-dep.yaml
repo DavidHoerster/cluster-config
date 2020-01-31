@@ -11,7 +11,7 @@ metadata:
     flux.weave.works/tag.init: regex:^3.10.*
     flux.weave.works/tag.podinfod: semver:~2.1
 spec:
-  replicas: 3
+  replicas: 1
   strategy:
     rollingUpdate:
       maxUnavailable: 0
@@ -48,7 +48,7 @@ spec:
             - --random-error=false
           env:
             - name: PODINFO_UI_MESSAGE
-              value: "Greetings human being! I've scaled down to 2 pods."
+              value: "Greetings human!"
           livenessProbe:
             httpGet:
               path: /healthz
